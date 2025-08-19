@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import 'bootstrap/dist/css/bootstrap.min.css';
+
+body {
+  @apply bg-[#f8f4e8] text-gray-800;
+  font-family: 'League Spartan', sans-serif;
+}
+
+html { scroll-behavior: smooth; }

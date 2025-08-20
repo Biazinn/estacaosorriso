@@ -2,6 +2,21 @@ export default function HomePage() {
   // Ajuste estes números quando tiver dados reais:
   const meta = { goal: 1000, collected: 0 };
   const percent = Math.min(100, Math.round((meta.collected / meta.goal) * 100));
+  const msg = `Olá! Quero ser voluntário no Estação Sorriso.
+        Nome:
+        Disponibilidade: manhã/tarde/noite
+        Como posso ajudar?`;
+  const to = "contato@seu-dominio.com";
+  const subject = "Quero ser voluntário - Estação Sorriso";
+  const body = `Olá!
+
+        Quero ser voluntário(a) no Estação Sorriso.
+        Nome:
+        Disponibilidade:
+        Como posso ajudar:
+
+        Obrigado!`;
+
 
   return (
     <main className="bg-[#f8f4e8] text-slate-900">
@@ -193,49 +208,84 @@ export default function HomePage() {
       {/* Contato / Voluntário */}
       <section id="voluntario" className="container mx-auto px-4 py-14">
         <h2 className="text-3xl md:text-4xl font-semibold text-center">Participe</h2>
-        <form
-          action="/api/voluntario"
-          method="POST"
-          className="mx-auto mt-8 max-w-xl space-y-4 rounded-xl bg-white p-6 shadow-sm ring-1 ring-slate-200"
-        >
-          {/* Honeypot anti-spam (fica oculto) */}
-          <input
-            type="text"
-            name="website"
-            tabIndex={-1}
-            autoComplete="off"
-            className="hidden"
-            aria-hidden="true"
-          />
 
-          <div>
-            <label htmlFor="nome" className="block text-sm font-medium">Nome</label>
-            <input id="nome" name="nome" type="text" required className="mt-1 w-full rounded-lg border border-slate-300 p-2 focus:border-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500" />
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div>
-              <label htmlFor="email" className="block text-sm font-medium">Email</label>
-              <input id="email" name="email" type="email" required className="mt-1 w-full rounded-lg border border-slate-300 p-2 focus:border-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500" />
-            </div>
-            <div>
-              <label htmlFor="telefone" className="block text-sm font-medium">WhatsApp</label>
-              <input id="telefone" name="telefone" type="tel" className="mt-1 w-full rounded-lg border border-slate-300 p-2 focus:border-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500" />
-            </div>
-          </div>
-          <div>
-            <label htmlFor="mensagem" className="block text-sm font-medium">Mensagem</label>
-            <textarea id="mensagem" name="mensagem" rows={4} className="mt-1 w-full rounded-lg border border-slate-300 p-2 focus:border-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500"></textarea>
-          </div>
+        {(() => {
+          // <<< DEFINIÇÕES NO MESMO ESCOPO >>>
+          const waNumber = "5548996975470"; // DDI+DDD+Número, só dígitos
+          const waMsg = `Olá! Quero ser voluntário(a) no Estação Sorriso.
+Nome:
+Disponibilidade: manhã/tarde/noite
+Como posso ajudar?`;
+          const waLink = `https://wa.me/${waNumber}?text=${encodeURIComponent(waMsg)}`;
 
-          <button type="submit" className="inline-flex w-full items-center justify-center rounded-lg bg-orange-500 px-5 py-3 font-medium text-white hover:bg-orange-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-orange-500">
-            Enviar
-          </button>
-        </form>
-        <p className="mt-4 text-center text-sm text-slate-600">
-          Prefere falar direto?
-          {' '} • <a href="https://wa.me/5548996975470" className="font-medium text-orange-600 underline">Chamar no WhatsApp</a>
-        </p>
+          const emailTo = "biazinisabela28@gmail.com";
+          const subject = "Quero ser voluntário - Estação Sorriso";
+          const body = `Olá!
+
+Quero ser voluntário(a) no Estação Sorriso.
+Nome:
+Disponibilidade:
+Como posso ajudar:
+
+Obrigado!`;
+          const mailtoHref = `mailto:${emailTo}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+          return (
+            <>
+              {/* Botões principais – centralizados e do mesmo tamanho */}
+              <div className="mt-8 mx-auto grid max-w-xl grid-cols-1 gap-4 sm:grid-cols-2">
+                <a
+                  href={waLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-lg bg-[#00d757] px-6 font-medium text-black shadow hover:bg-[#029e40] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 focus-visible:ring-offset-2"
+                >
+                  <svg className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M20.52 3.48A11.91 11.91 0 0012.04 0 12 12 0 000 12a11.9 11.9 0 003.48 8.52A12 12 0 0012 24h.01A12 12 0 0024 12a11.91 11.91 0 00-3.48-8.52zM12 22.1a10.1 10.1 0 01-5.4-1.56l-.39-.23-3.61.95.96-3.52-.25-.41A10.1 10.1 0 1112 22.1zm5.81-7.55c-.32-.16-1.88-.93-2.17-1.03-.29-.1-.5-.16-.71.16-.2.32-.81 1.03-1 1.24-.19.22-.37.24-.69.08-.32-.16-1.35-.49-2.57-1.56-.95-.85-1.59-1.9-1.78-2.22-.19-.32-.02-.49.14-.65.14-.14.32-.37.48-.56.16-.19.21-.32.32-.53.1-.22.05-.4-.03-.56-.08-.16-.71-1.71-.97-2.35-.26-.62-.52-.54-.71-.55h-.61c-.2 0-.53.08-.81.4-.28.32-1.07 1.04-1.07 2.53s1.1 2.94 1.25 3.15c.16.21 2.17 3.32 5.25 4.66.73.32 1.29.5 1.73.64.73.23 1.39.2 1.91.12.58-.09 1.88-.77 2.15-1.52.27-.75.27-1.39.19-1.52-.08-.13-.29-.21-.61-.37z" />
+                  </svg>
+                  Chamar no WhatsApp
+                </a>
+
+                <a
+                  href={mailtoHref}
+                  className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-lg bg-amber-500 px-6 font-medium text-black shadow hover:bg-amber-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 focus-visible:ring-offset-2"
+                >
+                  <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M3 7a2 2 0 012-2h14a2 2 0 012 2v.4l-9 6.3-9-6.3V7z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M3 8.5l8.6 6a2 2 0 002.8 0L23 8.5V17a2 2 0 01-2 2H5a2 2 0 01-2-2V8.5z" />
+                  </svg>
+                  Enviar e‑mail
+                </a>
+              </div>
+
+              {/* Links auxiliares */}
+              <p className="mt-4 text-center text-sm text-slate-700">
+                Prefere falar direto?{" "}
+                <a href={`mailto:${emailTo}`} className="font-medium text-amber-700 underline">E‑mail responsável</a>
+                {" "}•{" "}
+                <a href={`https://wa.me/${waNumber}`} target="_blank" rel="noopener noreferrer" className="font-medium text-amber-700 underline">
+                  Abrir WhatsApp
+                </a>
+              </p>
+
+              {/* Botão flutuante reaproveitando o mesmo waLink */}
+              <a
+                href={waLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="fixed bottom-5 right-5 z-40 inline-flex h-14 w-14 items-center justify-center rounded-full bg-[#00d757] text-black shadow-lg hover:bg-[#029e40]"
+                aria-label="Chamar no WhatsApp (flutuante)"
+              >
+                <svg className="h-7 w-7" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M20.52 3.48A11.91 11.91 0 0012.04 0 12 12 0 000 12a11.9 11.9 0 003.48 8.52A12 12 0 0012 24h.01A12 12 0 0024 12a11.91 11.91 0 00-3.48-8.52zM12 22.1a10.1 10.1 0 01-5.4-1.56l-.39-.23-3.61.95.96-3.52-.25-.41A10.1 10.1 0 1112 22.1zm5.81-7.55c-.32-.16-1.88-.93-2.17-1.03-.29-.1-.5-.16-.71.16-.2.32-.81 1.03-1 1.24-.19.22-.37.24-.69.08-.32-.16-1.35-.49-2.57-1.56-.95-.85-1.59-1.9-1.78-2.22-.19-.32-.02-.49.14-.65.14-.14.32-.37.48-.56.16-.19.21-.32.32-.53.1-.22.05-.4-.03-.56-.08-.16-.71-1.71-.97-2.35-.26-.62-.52-.54-.71-.55h-.61c-.2 0-.53.08-.81.4-.28.32-1.07 1.04-1.07 2.53s1.1 2.94 1.25 3.15c.16.21 2.17 3.32 5.25 4.66.73.32 1.29.5 1.73.64.73.23 1.39.2 1.91.12.58-.09 1.88-.77 2.15-1.52.27-.75.27-1.39.19-1.52-.08-.13-.29-.21-.61-.37z" />
+                </svg>
+              </a>
+            </>
+          );
+        })()}
       </section>
+
+
 
 
     </main>

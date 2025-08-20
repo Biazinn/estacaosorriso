@@ -7,7 +7,7 @@ export default function HomePage() {
     <main className="bg-[#f8f4e8] text-slate-900">
       {/* HERO */}
       <section className="container mx-auto px-4 py-16 text-center">
-    
+
         <h1 className="mt-6 text-5xl md:text-7xl font-semibold tracking-tight">
           Bem‑vindo à estação <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-500">sorriso</span>.
         </h1>
@@ -63,10 +63,10 @@ export default function HomePage() {
 
         <ul className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {[
-            {title:'Brinquedos', desc:'Carrinhos, bonecas, blocos de montar, pelúcias higienizadas.'},
-            {title:'Livros infantis', desc:'De 0–12 anos, sem rasgos ou rabiscos.'},
-            {title:'Jogos de tabuleiro', desc:'Com todas as peças.'},
-            {title:'Materiais artísticos', desc:'Massinhas, lápis de cor, giz, tintas atóxicas.'},
+            { title: 'Brinquedos', desc: 'Carrinhos, bonecas, blocos de montar, pelúcias higienizadas.' },
+            { title: 'Livros infantis', desc: 'De 0–12 anos, sem rasgos ou rabiscos.' },
+            { title: 'Jogos de tabuleiro', desc: 'Com todas as peças.' },
+            { title: 'Materiais artísticos', desc: 'Massinhas, lápis de cor, giz, tintas atóxicas.' },
           ].map((item) => (
             <li key={item.title} className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
               <h3 className="text-lg font-semibold">{item.title}</h3>
@@ -77,7 +77,7 @@ export default function HomePage() {
 
         <div className="mt-6 text-center text-sm text-slate-600">
           <span className="inline-flex items-center gap-2">
-            <svg className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fillRule="evenodd" d="M16.704 5.29a1 1 0 010 1.42l-7.39 7.39a1 1 0 01-1.415 0L3.296 9.486a1 1 0 011.414-1.415l3.004 3.003 6.683-6.683a1 1 0 011.307-.102z" clipRule="evenodd"/></svg>
+            <svg className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fillRule="evenodd" d="M16.704 5.29a1 1 0 010 1.42l-7.39 7.39a1 1 0 01-1.415 0L3.296 9.486a1 1 0 011.414-1.415l3.004 3.003 6.683-6.683a1 1 0 011.307-.102z" clipRule="evenodd" /></svg>
             Higienize os itens e coloque pilhas/baterias quando necessário.
           </span>
         </div>
@@ -95,7 +95,7 @@ export default function HomePage() {
             'Itens perigosos: pontiagudos, inflamáveis ou sem selo de segurança',
           ].map((text) => (
             <li key={text} className="flex items-start gap-3 rounded-xl border border-rose-200/60 bg-rose-50 p-5">
-              <svg className="mt-1 h-5 w-5 flex-none text-rose-600" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 1010 10A10.011 10.011 0 0012 2Zm1 14h-2v-2h2Zm0-4h-2V6h2Z"/></svg>
+              <svg className="mt-1 h-5 w-5 flex-none text-rose-600" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 1010 10A10.011 10.011 0 0012 2Zm1 14h-2v-2h2Zm0-4h-2V6h2Z" /></svg>
               <p className="text-sm text-slate-700">{text}</p>
             </li>
           ))}
@@ -107,10 +107,10 @@ export default function HomePage() {
         <h2 className="text-3xl md:text-4xl font-semibold text-center">Como funciona</h2>
         <ol className="mt-10 grid grid-cols-1 md:grid-cols-4 gap-8">
           {[
-            {etapa:'1. Entregue', texto:'Leve sua doação a um ponto de coleta.'},
-            {etapa:'2. Triagem', texto:'Conferimos estado e organizamos por faixa etária.'},
-            {etapa:'3. Higienização', texto:'Limpeza e verificação de segurança.'},
-            {etapa:'4. Entrega', texto:'Distribuição em instituições parceiras.'},
+            { etapa: '1. Entregue', texto: 'Leve sua doação a um ponto de coleta.' },
+            { etapa: '2. Triagem', texto: 'Conferimos estado e organizamos por faixa etária.' },
+            { etapa: '3. Higienização', texto: 'Limpeza e verificação de segurança.' },
+            { etapa: '4. Entrega', texto: 'Distribuição em instituições parceiras.' },
           ].map((s) => (
             <li key={s.etapa} className="relative rounded-xl bg-white p-6 shadow-sm ring-1 ring-slate-200">
               <span className="absolute -top-4 left-6 inline-flex h-8 w-8 items-center justify-center rounded-full bg-orange-500 text-white text-sm font-bold">
@@ -129,8 +129,8 @@ export default function HomePage() {
         <div className="mt-8 grid grid-cols-1 lg:grid-cols-2 gap-6">
           <ul role="list" className="space-y-4">
             {[
-              {nome:'Escola IENI', endereco:'Rod. Tertuliano Brito Xavier, 1789 – Canasvieiras', horario:'Seg–Sex, 7:30h–12:30h'},
-              {nome:'ELITI Kids', endereco:'Rua José Rosa, Esq, Tv. do Skate, – Bairro Canasvieiras', horario:'Terças-feiras, 18:30h–21h'},
+              { nome: 'Escola IENI', endereco: 'Rod. Tertuliano Brito Xavier, 1789 – Canasvieiras', horario: 'Seg–Sex, 7:30h–12:30h' },
+              { nome: 'ELITI Kids', endereco: 'Rua José Rosa, Esq, Tv. do Skate, – Bairro Canasvieiras', horario: 'Terças-feiras, 18:30h–21h' },
             ].map((p) => (
               <li key={p.nome} className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
                 <h3 className="text-lg font-semibold">{p.nome}</h3>
@@ -158,10 +158,10 @@ export default function HomePage() {
         <h2 className="text-3xl md:text-4xl font-semibold text-center">Impacto</h2>
         <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
           {[
-            {numero:'0', legenda:'brinquedos doados desde 2025'},
-            {numero:'0', legenda:'famílias beneficiadas'},
-            {numero:'4', legenda:'voluntários ativos'},
-          ].map((k)=>(
+            { numero: '0', legenda: 'brinquedos doados desde 2025' },
+            { numero: '0', legenda: 'famílias beneficiadas' },
+            { numero: '4', legenda: 'voluntários ativos' },
+          ].map((k) => (
             <div key={k.legenda} className="rounded-xl bg-white p-8 text-center shadow-sm ring-1 ring-slate-200">
               <div className="text-4xl font-extrabold">{k.numero}</div>
               <div className="mt-2 text-sm text-slate-600">{k.legenda}</div>
@@ -175,9 +175,9 @@ export default function HomePage() {
         <h2 className="text-3xl md:text-4xl font-semibold text-center">Perguntas frequentes</h2>
         <div className="mt-8 max-w-3xl mx-auto divide-y divide-slate-200">
           {[
-            {q:'Os brinquedos precisam ser novos?', a:'Não. Aceitamos seminovos em bom estado, limpos e completos.'},
-            {q:'Onde entrego a doação?', a:'Veja os pontos de coleta acima ou entre em contato para agendar.'},
-            {q:'Posso doar dinheiro?', a:'Sim, usamos para compra de brinquedos e materiais. Entre em contato para Pix.'},
+            { q: 'Os brinquedos precisam ser novos?', a: 'Não. Aceitamos seminovos em bom estado, limpos e completos.' },
+            { q: 'Onde entrego a doação?', a: 'Veja os pontos de coleta acima ou entre em contato para agendar.' },
+            { q: 'Posso doar dinheiro?', a: 'Sim, usamos para compra de brinquedos e materiais. Entre em contato para Pix.' },
           ].map((item) => (
             <details key={item.q} className="group p-4">
               <summary className="flex cursor-pointer list-none items-center justify-between font-medium">
@@ -193,10 +193,24 @@ export default function HomePage() {
       {/* Contato / Voluntário */}
       <section id="voluntario" className="container mx-auto px-4 py-14">
         <h2 className="text-3xl md:text-4xl font-semibold text-center">Participe</h2>
-        <form className="mx-auto mt-8 max-w-xl space-y-4 rounded-xl bg-white p-6 shadow-sm ring-1 ring-slate-200">
+        <form
+          action="/api/voluntario"
+          method="POST"
+          className="mx-auto mt-8 max-w-xl space-y-4 rounded-xl bg-white p-6 shadow-sm ring-1 ring-slate-200"
+        >
+          {/* Honeypot anti-spam (fica oculto) */}
+          <input
+            type="text"
+            name="website"
+            tabIndex={-1}
+            autoComplete="off"
+            className="hidden"
+            aria-hidden="true"
+          />
+
           <div>
             <label htmlFor="nome" className="block text-sm font-medium">Nome</label>
-            <input id="nome" name="nome" type="text" required className="mt-1 w-full rounded-lg border border-slate-300 p-2 focus:border-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500"/>
+            <input id="nome" name="nome" type="text" required className="mt-1 w-full rounded-lg border border-slate-300 p-2 focus:border-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500" />
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
@@ -205,24 +219,25 @@ export default function HomePage() {
             </div>
             <div>
               <label htmlFor="telefone" className="block text-sm font-medium">WhatsApp</label>
-              <input id="telefone" name="telefone" type="tel" className="mt-1 w-full rounded-lg border border-slate-300 p-2 focus:border-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500"/>
+              <input id="telefone" name="telefone" type="tel" className="mt-1 w-full rounded-lg border border-slate-300 p-2 focus:border-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500" />
             </div>
           </div>
           <div>
             <label htmlFor="mensagem" className="block text-sm font-medium">Mensagem</label>
             <textarea id="mensagem" name="mensagem" rows={4} className="mt-1 w-full rounded-lg border border-slate-300 p-2 focus:border-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500"></textarea>
           </div>
+
           <button type="submit" className="inline-flex w-full items-center justify-center rounded-lg bg-orange-500 px-5 py-3 font-medium text-white hover:bg-orange-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-orange-500">
             Enviar
           </button>
         </form>
         <p className="mt-4 text-center text-sm text-slate-600">
-          Prefere falar direto? 
+          Prefere falar direto?
           {' '} • <a href="https://wa.me/5548996975470" className="font-medium text-orange-600 underline">Chamar no WhatsApp</a>
         </p>
       </section>
 
-     
+
     </main>
   );
 }

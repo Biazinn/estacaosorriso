@@ -1,6 +1,6 @@
 export default function HomePage() {
   // Ajuste estes números quando tiver dados reais:
-  const meta = { goal: 1000, collected: 120 };
+  const meta = { goal: 1000, collected: 0 };
   const percent = Math.min(100, Math.round((meta.collected / meta.goal) * 100));
   const msg = `Olá! Quero ser voluntário no Estação Sorriso.
         Nome:

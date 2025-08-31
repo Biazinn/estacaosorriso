@@ -9,6 +9,7 @@ const NAV_ITEMS = [
   { href: "/#o-que-buscamos", label: "O que buscamos" },
   { href: "/#como-doar", label: "Como funciona" },
   { href: "/#voluntario", label: "Contato" },
+  { href: "/animais", label: "Animais" },
 ];
 
 export default function Navbar() {
